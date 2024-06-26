@@ -1,13 +1,17 @@
 return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
-    lazy = true,
     config = function()
         require("nvim-treesitter.configs").setup({
-            -- A list of parser names, or "all"
+            -- A list of parser names, or "all". [Note]: use TSInstall instead of ensure_installed 
+--           ensure_installed = {
+--                  "python", "vimdoc", "javascript", "c", "lua", "bash", "markdown"
+--          },
+
+            sync_install = false,
             -- Automatically install missing parsers when entering buffer
             -- Recommendation: set to false if you don"t have `tree-sitter` CLI installed locally
-            auto_install = true,
+            auto_install=false,
 
             indent = {
                 enable = true
