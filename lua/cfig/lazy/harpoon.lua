@@ -24,10 +24,10 @@ return {
           })
           :find()
       end
-      vim.keymap.set("n", "<leader>h", function()
-        local harpoon = require("harpoon")
-        toggle_telescope_with_harpoon(harpoon:list())
-      end, { desc = "Open harpoon window" })
+      -- vim.keymap.set("n", "<leader>h", function()
+        -- local harpoon = require("harpoon")
+        -- toggle_telescope_with_harpoon(harpoon:list())
+      -- end, { desc = "Open harpoon window" })
     end,
     keys = {
       {
@@ -38,7 +38,7 @@ return {
         desc = "harpoon file",
       },
       {
-        "<leader>hm",
+        "<leader>hq",
         function()
           local harpoon = require("harpoon")
           harpoon.ui:toggle_quick_menu(harpoon:list())
@@ -65,6 +65,13 @@ return {
           require("harpoon"):list():select(3)
         end,
         desc = "harpoon to file 3",
+      },
+      {
+        "<leader>4",
+        function()
+          require("harpoon"):list():select(4)
+        end,
+        desc = "harpoon to file 4",
       },
     },
   },
