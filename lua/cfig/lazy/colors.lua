@@ -1,41 +1,53 @@
 return {
-  -- current color scheme
-  {
-    "rose-pine/neovim",
-    name = "rose-pine",
-    priority = 1000,
-    config = function()
-        require("rose-pine").setup({
-          variant = "auto",
-          dark_variant = "main",
+    -- current color scheme
+    {
+        "rose-pine/neovim",
+        name = "rose-pine",
+        priority = 1000,
+        config = function()
+            require("rose-pine").setup({
+                variant = "moon",
+                dark_variant = "moon",
+                disable_background = true,
+                disable_nc_background = true,
+                disable_float_background = true,
 
-          disable_background = true,
-          disable_nc_background = true,
-          disable_float_background = true,
+                enable = {
+                    terminal = true,
+                    legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
+                    migrations = true, -- Handle deprecated options automatically
+                },
 
-          groups = {
-            -- background = "pine", --"#133340", --"#255159",
-            -- panel = "surface",   -- "#133340",
-            border = "pine", --"pine",
-          },
+                styles = {
+                    italic = false,
+                    transparency = false,
+                    bold = false,
+                },
 
-          highlight_groups = {
-            -- blend colours against the 'base' background
-            ColorColumn = { bg = "pine", blend = 40 },
-            CursorLine = { bg = "pine", blend = 21 },
+                groups = {
+                    -- background = "pine", --"#133340", --"#255159",
+                    -- panel = "surface",   -- "#133340",
+                    border = "pine", --"pine",
+                },
 
-            Search = { bg = "rose", inherit = false },
-            FloatBorder = { bg = "none" },
-            LineNr = { fg = "#f6c177" }, -- gold
+                highlight_groups = {
+                    -- blend colours against the 'base' background
+                    ColorColumn = { bg = "pine", blend = 40 },
+                    CursorLine = { bg = "pine", blend = 21 },
 
-            -- nvim-cmp
-            -- winhighlight = "Normal:CmpPmenu,CursorLine:CmpSel,Search:None"
-            CmpPmenu = { bg = "#011b26" },
-            CmpSel = { bg = "pine" },
-            CmpDoc = { bg = "#011b26" },
-          },
-        })
-        vim.cmd.colorscheme("rose-pine")
-    end
-  }
+                    Variables = { italic = false },
+                    Search = { bg = "rose", inherit = false },
+                    FloatBorder = { bg = "none" },
+                    LineNr = { fg = "#f6c177" }, -- gold
+
+                    -- nvim-cmp
+                    -- winhighlight = "Normal:CmpPmenu,CursorLine:CmpSel,Search:None"
+                    CmpPmenu = { bg = "#011b26" },
+                    CmpSel = { bg = "pine" },
+                    CmpDoc = { bg = "#011b26" },
+                },
+            })
+            vim.cmd.colorscheme("rose-pine")
+        end
+    }
 }
