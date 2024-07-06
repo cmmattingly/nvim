@@ -10,3 +10,5 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 -- paste without losing paste registry from delete
 vim.keymap.set("n", "<leader>p", "\"_dP")
+
+vim.keymap.set("n", "<leader>y", "\"+y")
