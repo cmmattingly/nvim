@@ -5,8 +5,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.g.mapleader = " " -- `mapleader` before lazy so your mappings are correct
-
 require("lazy").setup({
     spec = "cfig.lazy",
     change_detection = { notify = false }
